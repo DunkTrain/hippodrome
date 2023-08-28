@@ -72,7 +72,7 @@ class HorseTest {
     public void moveDistance(double random) {
         try (MockedStatic<Horse> mocked = mockStatic(Horse.class)) {
             mocked.when(() -> Horse.getRandomDouble(0.2, 0.9)).thenReturn(random);
-            Horse horse = new Horse("Test", 1, 5);
+            Horse horse = new Horse("Ghost", 20.0, 200.0);
             double distance = horse.getDistance() + horse.getSpeed() * Horse.getRandomDouble(0.2, 0.9);
             horse.move();
             assertEquals(distance, horse.getDistance());
