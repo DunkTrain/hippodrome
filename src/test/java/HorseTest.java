@@ -15,17 +15,21 @@ class HorseTest {
     @ParameterizedTest
     @ValueSource(strings = {"", " ", "\n", "\t"})
     public void ConstructorWithBlankNameAndExceptionMessageForBlankName(String name) {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> new Horse(name,20.0, 200.0));
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> new Horse(name, 20.0, 200.0));
         assertEquals("Name cannot be blank.", exception.getMessage());
     }
 
     @Test
-    public void ConstructorWithSecondParamNegativeSpeedAndExceptionMessage (){
+    public void ConstructorWithSecondParamNegativeSpeedAndExceptionMessage() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> new Horse("Ghost", -20.0, 200.0));
         assertEquals("Speed cannot be negative.", exception.getMessage());
     }
 
-
+    @Test
+    public void ConstructorWithThirdParamNegativeDistanceAndExceptionMessage() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> new Horse("Ghost", 20.0,-200.0));
+        assertEquals("Distance cannot be negative.", exception.getMessage());
+    }
 
 
     @Test
