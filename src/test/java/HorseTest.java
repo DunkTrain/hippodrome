@@ -34,6 +34,8 @@ class HorseTest {
 
     @Test
     void getName() {
+        Horse horse = new Horse("Ghost", 20.0, 200.0);
+        assertEquals("Ghost", horse.getName());
     }
 
     @Test
