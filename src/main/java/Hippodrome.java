@@ -1,3 +1,6 @@
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -5,7 +8,7 @@ import java.util.List;
 import static java.util.Objects.isNull;
 
 public class Hippodrome {
-
+    private static final Logger log = LoggerFactory.getLogger(Main.class);
     private final List<Horse> horses;
 
     public Hippodrome(List<Horse> horses) {
@@ -16,6 +19,7 @@ public class Hippodrome {
         }
 
         this.horses = horses;
+        log.debug("Создание Hippodrome, лошадей [{}]", horses.size());
     }
 
     public List<Horse> getHorses() {
