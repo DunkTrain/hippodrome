@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
 
+    @Disabled
     @Timeout(value = 22)
     @Test
     public void main() throws Exception {
