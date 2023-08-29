@@ -41,8 +41,8 @@ class HippodromeTest {
         }
         new Hippodrome(horses).move();
 
-        for(Horse horse : horses) {
-            verify(horse).move();
+        for(Horse mockHorse : horses) {
+            verify(mockHorse).move();
         }
     }
 
