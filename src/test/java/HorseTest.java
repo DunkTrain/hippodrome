@@ -68,7 +68,7 @@ class HorseTest {
     }
 
     @ParameterizedTest
-    @ValueSource(doubles = {0.2, 0.4, 0.6, 0.8})
+    @ValueSource(doubles = {0.1, 0.2, 0.4, 0.6, 0.8, 999.999, 0.0})
     public void moveDistance(double random) {
         try (MockedStatic<Horse> mocked = mockStatic(Horse.class)) {
             mocked.when(() -> Horse.getRandomDouble(0.2, 0.9)).thenReturn(random);
