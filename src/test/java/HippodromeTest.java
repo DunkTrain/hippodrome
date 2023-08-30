@@ -25,7 +25,7 @@ class HippodromeTest {
     @Test
     void getHorses() {
         List<Horse> horsesList = new ArrayList<>();
-        for (int i = 0; i < 30; i++) {
+        for (int i = 1; i < 30; i++) {
             horsesList.add(new Horse("Horse " + i, 10.0, 100.0));
         }
         Hippodrome hippodrome = new Hippodrome(horsesList);
