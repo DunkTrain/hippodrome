@@ -40,7 +40,6 @@ class HippodromeTest {
             horses.add(mockHorse);
         }
         new Hippodrome(horses).move();
-
         for(Horse mockHorse : horses) {
             verify(mockHorse).move();
         }
@@ -52,10 +51,8 @@ class HippodromeTest {
         Horse horse2 = new Horse("Horse 2", 12.0, 200.0);
         Horse horse3 = new Horse("Horse 3", 8.0, 180.0);
         List<Horse> horses = List.of(horse1, horse2, horse3);
-
         Hippodrome hippodrome = new Hippodrome(horses);
         Horse winner = hippodrome.getWinner();
-
         assertEquals(horse2, winner);
     }
 }
